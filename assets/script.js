@@ -12,7 +12,7 @@ $(document).ready(function () {
         console.log(typeof currentTime);
         $(".time-block").each(function () {
             var blockTime = parseInt($(this).attr("id"));
-            console.log(blockTime, "blocktime");
+            // console.log(blockTime, "blocktime");
             //  console.log(typeof blockTime);
             if (blockTime < currentTime) {
                 $(this).removeClass("future");
@@ -64,4 +64,8 @@ $(document).ready(function () {
     $("#3PMtext").append(localStorage.getItem("3PM"));
     $("#4PMtext").append(localStorage.getItem("4PM"));
     $("#5PMtext").append(localStorage.getItem("5PM"));
+    $(".newPlan").click(function () {
+        localStorage.clear();
+        location.reload();
+    });
 });
